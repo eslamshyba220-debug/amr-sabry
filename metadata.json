@@ -1,0 +1,6 @@
+{
+  "name": "مركز المجد للعلاج الطبيعي والتأهيل",
+  "description": "الموقع الرسمي لمركز المجد للعلاج الطبيعي والتأهيل بالإسكندرية تحت إشراف د. عمرو صبري، استشاري العلاج الطبيعي والتأهيل.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
