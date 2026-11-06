@@ -26,6 +26,9 @@ export interface LocationItem {
   address?: string;
   workingHours?: string;
   isMainBranch?: boolean;
+  bookingNumber?: string;
+  bookingHref?: string;
+  bookingChannel?: 'phone' | 'whatsapp';
 }
 
 export interface BookingFormData {

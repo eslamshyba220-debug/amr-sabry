@@ -10,7 +10,7 @@ interface TeamProps {
 export const Team: React.FC<TeamProps> = ({ onBookDoctor }) => {
   // First row: 3 doctors
   const firstRowDoctors = doctors.slice(0, 3);
-  // Second row: 2 doctors centered
+  // Remaining doctors centered
   const secondRowDoctors = doctors.slice(3, 5);
 
   return (

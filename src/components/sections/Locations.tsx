@@ -1,6 +1,6 @@
 import React from 'react';
 import { SectionHeader } from '../ui/SectionHeader';
-import { MapPin, Clock, Building } from 'lucide-react';
+import { MapPin, Clock, Building, Phone, MessageCircle } from 'lucide-react';
 import { locations } from '../../data/locations';
 
 export const Locations: React.FC = () => {
@@ -50,6 +50,26 @@ export const Locations: React.FC = () => {
                     <Clock className="w-4 h-4 text-sky-600 shrink-0 mt-0.5" />
                     <span>{loc.workingHours}</span>
                   </div>
+                )}
+
+                {loc.bookingNumber && loc.bookingHref && loc.bookingChannel && (
+                  <a
+                    href={loc.bookingHref}
+                    target={loc.bookingChannel === 'whatsapp' ? '_blank' : undefined}
+                    rel={loc.bookingChannel === 'whatsapp' ? 'noopener noreferrer' : undefined}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-900 transition-colors"
+                    aria-label={`للحجز في ${loc.name}: ${loc.bookingNumber}`}
+                  >
+                    {loc.bookingChannel === 'whatsapp' ? (
+                      <MessageCircle className="w-4 h-4 shrink-0" />
+                    ) : (
+                      <Phone className="w-4 h-4 shrink-0" />
+                    )}
+                    <span>
+                      <span className="text-xs text-slate-500">للحجز: </span>
+                      <span dir="ltr">{loc.bookingNumber}</span>
+                    </span>
+                  </a>
                 )}
               </div>
 

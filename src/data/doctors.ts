@@ -23,12 +23,6 @@ export const doctors: Doctor[] = [
   },
   {
     id: 4,
-    name: 'د / حسن محمد',
-    specialty: 'أخصائي العلاج الطبيعي والتأهيل',
-    slug: 'hassan-mohamed',
-  },
-  {
-    id: 5,
     name: 'د / مني عتمان',
     specialty: 'أخصائي التغذية العلاجية والتحاليل الطبية',
     slug: 'mona-othman',
