@@ -57,7 +57,7 @@ export const Locations: React.FC = () => {
                     href={loc.bookingHref}
                     target={loc.bookingChannel === 'whatsapp' ? '_blank' : undefined}
                     rel={loc.bookingChannel === 'whatsapp' ? 'noopener noreferrer' : undefined}
-                    className={`mt-4 flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold text-white transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+                    className={`mt-4 flex w-full items-center justify-center gap-2 rounded-xl px-3 py-3 text-sm font-bold text-white transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                       loc.bookingChannel === 'whatsapp'
                         ? 'bg-emerald-600 hover:bg-emerald-700 focus:ring-emerald-500'
                         : 'bg-sky-600 hover:bg-sky-700 focus:ring-sky-500'
@@ -69,8 +69,7 @@ export const Locations: React.FC = () => {
                     ) : (
                       <Phone className="w-4 h-4 shrink-0" />
                     )}
-                    <span>{loc.bookingChannel === 'whatsapp' ? 'احجز عبر واتساب' : 'اتصل للحجز'}</span>
-                    <span dir="ltr" className="text-xs font-medium opacity-90">
+                    <span dir="ltr" className="whitespace-nowrap text-sm font-semibold tabular-nums">
                       {loc.bookingNumber}
                     </span>
                   </a>
