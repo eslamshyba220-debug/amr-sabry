@@ -32,8 +32,8 @@ export const locations: LocationItem[] = [
   {
     id: 4,
     bookingNumber: '+20 11 03600787',
-    bookingHref: 'tel:+201103600787',
-    bookingChannel: 'phone',
+    bookingHref: 'https://wa.me/201103600787',
+    bookingChannel: 'whatsapp',
     name: 'مركز ترياق',
     address: 'طريق الحرية، سبورتنج، الإسكندرية',
     isMainBranch: false,
