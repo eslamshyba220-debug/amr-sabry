@@ -57,17 +57,21 @@ export const Locations: React.FC = () => {
                     href={loc.bookingHref}
                     target={loc.bookingChannel === 'whatsapp' ? '_blank' : undefined}
                     rel={loc.bookingChannel === 'whatsapp' ? 'noopener noreferrer' : undefined}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-sky-700 hover:text-sky-900 transition-colors"
-                    aria-label={`للحجز في ${loc.name}: ${loc.bookingNumber}`}
+                    className={`mt-4 flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold text-white transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+                      loc.bookingChannel === 'whatsapp'
+                        ? 'bg-emerald-600 hover:bg-emerald-700 focus:ring-emerald-500'
+                        : 'bg-sky-600 hover:bg-sky-700 focus:ring-sky-500'
+                    }`}
+                    aria-label={`${loc.bookingChannel === 'whatsapp' ? 'احجز عبر واتساب' : 'اتصل للحجز'} في ${loc.name}: ${loc.bookingNumber}`}
                   >
                     {loc.bookingChannel === 'whatsapp' ? (
                       <MessageCircle className="w-4 h-4 shrink-0" />
                     ) : (
                       <Phone className="w-4 h-4 shrink-0" />
                     )}
-                    <span>
-                      <span className="text-xs text-slate-500">للحجز: </span>
-                      <span dir="ltr">{loc.bookingNumber}</span>
+                    <span>{loc.bookingChannel === 'whatsapp' ? 'احجز عبر واتساب' : 'اتصل للحجز'}</span>
+                    <span dir="ltr" className="text-xs font-medium opacity-90">
+                      {loc.bookingNumber}
                     </span>
                   </a>
                 )}
