@@ -30,20 +30,24 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
     <>
       <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-slate-200/80 transition-shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-8">
-          {/* Zone 1: Brand Wordmark */}
           <a
             href="#home"
             onClick={(e) => handleScroll(e, '#home')}
-            className="flex items-center gap-3 whitespace-nowrap shrink-0 group focus:outline-hidden focus:ring-2 focus:ring-sky-500 rounded-lg"
+            className="flex items-center gap-2 sm:gap-3 whitespace-nowrap shrink-0 group focus:outline-hidden focus:ring-2 focus:ring-sky-500 rounded-lg"
+            aria-label="مركز المجد للعلاج الطبيعي والتأهيل - الرئيسية"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-600 to-sky-800 text-white flex items-center justify-center font-bold text-lg shadow-sm">
-              م
-            </div>
+            <img
+              src="/logo.jpg"
+              alt=""
+              className="w-11 h-11 sm:w-14 sm:h-14 rounded-full object-cover border border-slate-200"
+              width="56"
+              height="56"
+            />
             <div className="flex flex-col text-right">
-              <span className="text-lg sm:text-xl font-extrabold text-slate-900 group-hover:text-sky-600 transition-colors">
+              <span className="text-base sm:text-xl font-extrabold text-slate-900 group-hover:text-sky-600 transition-colors">
                 مركز المجد
               </span>
-              <span className="text-[11px] font-medium text-slate-500 hidden sm:inline-block">
+              <span className="text-[10px] sm:text-[11px] font-medium text-slate-500">
                 للعلاج الطبيعي والتأهيل
               </span>
             </div>
@@ -82,7 +86,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBooking }) => {
               <span>احجز موعدك الآن</span>
             </button>
 
-            {/* Mobile hamburger button */}
             <button
               type="button"
               onClick={() => setMobileMenuOpen(true)}

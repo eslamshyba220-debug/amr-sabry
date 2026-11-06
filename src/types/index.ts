@@ -25,7 +25,6 @@ export interface LocationItem {
   name: string;
   address?: string;
   workingHours?: string;
-  googleMapsUrl?: string;
   isMainBranch?: boolean;
 }
 

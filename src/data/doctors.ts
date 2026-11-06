@@ -1,4 +1,4 @@
-import { Doctor } from '../types';
+﻿import { Doctor } from '../types';
 
 export const doctors: Doctor[] = [
   {
@@ -30,7 +30,7 @@ export const doctors: Doctor[] = [
   {
     id: 5,
     name: 'د / مني عتمان',
-    specialty: 'استشاري التغذية العلاجية والصحة العامة',
+    specialty: 'أخصائي التغذية العلاجية والتحاليل الطبية',
     slug: 'mona-othman',
   },
 ];

@@ -52,7 +52,7 @@ export default function App() {
         <Team onBookDoctor={openDoctorBooking} />
         <Services onBookService={openServiceBooking} />
         <RehabInfo />
-        <Locations onBookDoctor={openDoctorBooking} />
+        <Locations />
         <Contact onOpenBooking={openGeneralBooking} />
       </main>
 

@@ -9,7 +9,6 @@ export const partners: Partner[] = [
   { id: 6, name: 'Unimed', category: 'رعاية طبية' },
   { id: 7, name: 'ADVO Care', category: 'إدارة طبية' },
   { id: 8, name: 'Petrogas', category: 'قطاع البترول' },
-  { id: 9, name: 'We Med', category: 'تأمين صحي' },
   { id: 10, name: 'Unicare', category: 'شبكة طبية' },
   { id: 11, name: 'نادي الاتحاد السكندري', category: 'هيئات وأندية رياضية' },
   { id: 12, name: 'نادي سموحة', category: 'هيئات وأندية رياضية' },

@@ -1,6 +1,6 @@
 import React from 'react';
 import { SectionHeader } from '../ui/SectionHeader';
-import { MapPin, Phone, MessageCircle, Clock, Calendar, Navigation } from 'lucide-react';
+import { MapPin, Phone, MessageCircle, Clock, Calendar } from 'lucide-react';
 
 interface ContactProps {
   onOpenBooking: () => void;
@@ -15,9 +15,9 @@ export const Contact: React.FC<ContactProps> = ({ onOpenBooking }) => {
           subtitle="فريق الاستقبال في مركز المجد جاهز للرد على استفساراتكم وحجز مواعيدكم طوال أيام الأسبوع"
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 gap-8 items-stretch">
           {/* Contact Details Cards (7 cols) */}
-          <div className="lg:col-span-7 flex flex-col justify-between space-y-6 text-right">
+          <div className="flex flex-col justify-between space-y-6 text-right">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Card 1: Address */}
               <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-xs">
@@ -33,15 +33,6 @@ export const Contact: React.FC<ContactProps> = ({ onOpenBooking }) => {
                 <p className="text-sm font-semibold text-slate-800 mt-0.5">
                   227 شارع الفتح
                 </p>
-                <a
-                  href="https://maps.google.com/?q=Alexandria+Janaklis+227+Al+Fath+Street"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs text-sky-600 hover:text-sky-700 font-semibold mt-3"
-                >
-                  <Navigation className="w-3.5 h-3.5" />
-                  <span>فتح في خرائط جوجل</span>
-                </a>
               </div>
 
               {/* Card 2: Phones */}
@@ -132,37 +123,6 @@ export const Contact: React.FC<ContactProps> = ({ onOpenBooking }) => {
             </div>
           </div>
 
-          {/* Location Map Preview (5 cols) */}
-          <div className="lg:col-span-5 flex flex-col h-full rounded-2xl overflow-hidden border border-slate-200/80 bg-slate-100 shadow-xs min-h-[350px]">
-            <div className="p-4 bg-white border-b border-slate-200/80 flex items-center justify-between text-right">
-              <div>
-                <span className="text-xs text-sky-600 font-bold block">موقع المركز</span>
-                <span className="text-sm font-bold text-slate-900">
-                  الإسكندرية - جناكليس - 227 شارع الفتح
-                </span>
-              </div>
-              <a
-                href="https://maps.google.com/?q=Alexandria+Janaklis+227+Al+Fath+Street"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-3 py-1.5 text-xs font-semibold bg-sky-50 hover:bg-sky-100 text-sky-700 rounded-lg transition-colors inline-flex items-center gap-1"
-              >
-                <span>خريطة جوجل</span>
-                <Navigation className="w-3.5 h-3.5" />
-              </a>
-            </div>
-
-            {/* Embedded Interactive Map Frame */}
-            <div className="relative flex-1 w-full min-h-[280px]">
-              <iframe
-                title="موقع مركز المجد للعلاج الطبيعي والتأهيل"
-                src="https://maps.google.com/maps?q=31.2333,29.9667(مركز%20المجد%20للعلاج%20الطبيعي%20والتأهيل)&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                className="w-full h-full border-0 absolute inset-0"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </section>
