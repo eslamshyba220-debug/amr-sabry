@@ -6,6 +6,7 @@ import { Partners } from './components/sections/Partners';
 import { About } from './components/sections/About';
 import { Team } from './components/sections/Team';
 import { Services } from './components/sections/Services';
+import { VideoLibrary } from './components/sections/VideoLibrary';
 import { RehabInfo } from './components/sections/RehabInfo';
 import { Locations } from './components/sections/Locations';
 import { Contact } from './components/sections/Contact';
@@ -52,6 +53,7 @@ export default function App() {
         <Team onBookDoctor={openDoctorBooking} />
         <Services onBookService={openServiceBooking} />
         <RehabInfo />
+        <VideoLibrary />
         <Locations />
         <Contact onOpenBooking={openGeneralBooking} />
       </main>

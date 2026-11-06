@@ -12,6 +12,7 @@ export const navItems = [
   { label: 'فريق العمل', href: '#team' },
   { label: 'خدماتنا', href: '#services' },
   { label: 'العلاج الطبيعي والتأهيل', href: '#rehab-info' },
+  { label: 'الفيديوهات', href: '#videos' },
   { label: 'تواصل معنا', href: '#contact' },
 ];
 
