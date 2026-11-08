@@ -7,13 +7,17 @@ import thumbnail4 from '../../assets/images/video-thumbnails/1268556148567355.jp
 import thumbnail5 from '../../assets/images/video-thumbnails/896956859853957.jpg';
 import thumbnail6 from '../../assets/images/video-thumbnails/1077959327893636.jpg';
 
-const videos = [
+const videos: { id: string; thumbnail?: string }[] = [
   { id: '1478920913884327', thumbnail: thumbnail1 },
   { id: '926581159755547', thumbnail: thumbnail2 },
   { id: '1269625421781908', thumbnail: thumbnail3 },
   { id: '1268556148567355', thumbnail: thumbnail4 },
   { id: '896956859853957', thumbnail: thumbnail5 },
   { id: '1077959327893636', thumbnail: thumbnail6 },
+  { id: '978235114576590' },
+  { id: '1662357881701672' },
+  { id: '1614270713198583' },
+  { id: '1408105687786373' },
 ];
 
 export const VideoLibrary: React.FC = () => {
@@ -23,7 +27,7 @@ export const VideoLibrary: React.FC = () => {
     <section id="videos" className="bg-white py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {videos.map((video) => {
+          {videos.map((video, index) => {
             const isActive = activeVideoId === video.id;
 
             return (
@@ -35,7 +39,7 @@ export const VideoLibrary: React.FC = () => {
                   {isActive ? (
                     <iframe
                       src={`https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(`https://www.facebook.com/reel/${video.id}/`)}&show_text=false&autoplay=1`}
-                      title={`Facebook video ${video.id}`}
+                      title={`فيديو ${index + 1} من مكتبة مركز المجد`}
                       className="absolute inset-0 h-full w-full border-0"
                       allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                       allowFullScreen
@@ -44,18 +48,28 @@ export const VideoLibrary: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setActiveVideoId(video.id)}
-                      aria-label={`تشغيل الفيديو ${video.id}`}
-                      className="group absolute inset-0 flex h-full w-full items-center justify-center cursor-pointer"
+                      aria-label={`تشغيل الفيديو ${index + 1} من مكتبة مركز المجد`}
+                      className="group absolute inset-0 flex h-full w-full flex-col gap-5 items-center justify-center cursor-pointer"
                     >
+                      {video.thumbnail ? (
                       <img
                         src={video.thumbnail}
                         alt=""
                         loading="lazy"
                         className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
+                      ) : (
+                        <div className="absolute inset-0 bg-gradient-to-br from-sky-900 via-slate-900 to-sky-950" />
+                      )}
                       <span className="relative flex h-16 w-16 items-center justify-center rounded-full bg-slate-950/70 text-white shadow-xl ring-2 ring-white/80 transition-transform group-hover:scale-110">
                         <Play className="mr-0.5 h-7 w-7 fill-current" aria-hidden="true" />
                       </span>
+                      {!video.thumbnail && (
+                        <span className="relative px-6 text-center text-white">
+                          <span className="block text-lg font-bold">مكتبة فيديوهات مركز المجد</span>
+                          <span className="mt-2 block text-sm text-sky-100">اضغط لمشاهدة الفيديو {index + 1}</span>
+                        </span>
+                      )}
                     </button>
                   )}
                 </div>
